@@ -1,0 +1,200 @@
+    <style>
+        body {
+            /* NOTE: Removed background-color: #FDFBF8; here so it inherits Carrd's background */
+            font-family: 'Inter', sans-serif;
+            color: #3D3D3D;
+        }
+        .nav-link {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .nav-link.active {
+            color: #D97706;
+            border-bottom-color: #D97706;
+            font-weight: 600;
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+        .kpi-card {
+            background-color: #FFFFFF;
+            border: 1px solid #F3EFEA;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+        .tech-card {
+             background-color: #FFFFFF;
+             border: 1px solid #F3EFEA;
+             transition: all 0.3s ease;
+        }
+        .tech-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+        }
+        .control-btn {
+            transition: all 0.2s ease;
+        }
+        .control-btn.active {
+            background-color: #D97706;
+            color: white;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        }
+        .live-link-btn {
+            transition: background-color 0.3s ease;
+        }
+    </style>
+    <!-- Tailwind CSS is loaded via script tag in Carrd, ensure this is included if Carrd doesn't handle external scripts well. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 tracking-tight">Case Study: The Scalable Mascot Component</h1>
+            <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">Engineering a scalable, animation-ready character system to accelerate production and ensure brand consistency.</p>
+        </header>
+
+        <main>
+            <nav class="mb-8 border-b border-gray-200">
+                <ul class="flex justify-center space-x-4 md:space-x-8 -mb-px">
+                    <li><button class="nav-link py-4 px-1 border-b-2 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 active" data-tab="impact">Impact</button></li>
+                    <li><button class="nav-link py-4 px-1 border-b-2 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" data-tab="solution">Interactive Solution</button></li>
+                    <li><button class="nav-link py-4 px-1 border-b-2 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" data-tab="technical">Technical Deep Dive</button></li>
+                </ul>
+            </nav>
+
+            <div id="tab-content">
+                <section id="impact" class="content-section active">
+                    <div class="text-center mb-10">
+                        <h2 class="text-3xl font-bold text-gray-800">The Senior Problem & The Measurable Impact</h2>
+                        <p class="mt-2 text-gray-600 max-w-2xl mx-auto">The goal was to solve the challenge of maintaining visual consistency and production speed for a growing product team.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                        <div class="kpi-card rounded-xl p-6">
+                            <h3 class="text-5xl font-bold text-amber-600">>95%</h3>
+                            <p class="mt-2 text-gray-600 font-medium">Time Reduction</p>
+                            <p class="text-sm text-gray-500">From 30-45 mins per asset to under 30 seconds.</p>
+                        </div>
+                        <div class="kpi-card rounded-xl p-6">
+                            <h3 class="text-5xl font-bold text-amber-600">&lt;30s</h3>
+                            <p class="mt-2 text-gray-600 font-medium">Asset Generation</p>
+                            <p class="text-sm text-gray-500">Single-click creation via component properties.</p>
+                        </div>
+                        <div class="kpi-card rounded-xl p-6">
+                             <h3 class="text-5xl font-bold text-amber-600">Zero</h3>
+                            <p class="mt-2 text-gray-600 font-medium">Rework Handoff</p>
+                            <p class="text-sm text-gray-500">Animation-ready files guaranteed for motion designers.</p>
+                        </div>
+                    </div>
+                     <div class="mt-10 bg-white border border-gray-200 rounded-lg p-8 text-center">
+                        <h3 class="text-2xl font-bold text-gray-800">Accelerated Design Cycles</h3>
+                        <p class="mt-3 text-gray-600 max-w-3xl mx-auto">This efficiency gain significantly accelerates design cycles, reduces QA needed for visual errors, and guarantees brand consistency across all product surfaces. The system is not just an illustration; it's a production tool.</p>
+                        <a href="#" id="live-link-cta-1" class="live-link-btn mt-6 inline-block bg-amber-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-amber-700">Inspect the Live Figma File Architecture</a>
+                    </div>
+                </section>
+
+                <section id="solution" class="content-section">
+                    <div class="text-center mb-10">
+                        <h2 class="text-3xl font-bold text-gray-800">Solution: Component-Driven Architecture</h2>
+                        <p class="mt-2 text-gray-600 max-w-2xl mx-auto">An interactive demonstration of the final four-state character component.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div class="bg-gray-100 rounded-xl flex items-center justify-center p-8 aspect-square">
+                            <img id="character-image" src="https://placehold.co/400x400/FDFBF8/3D3D3D?text=Default" alt="Character showing default emotion" class="max-w-full h-auto rounded-md">
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-4 text-gray-700">Control Panel</h3>
+                            <div class="bg-white p-6 rounded-lg border border-gray-200">
+                                <p class="font-medium text-gray-800 mb-3">Emotion State</p>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <button class="control-btn py-2 px-4 rounded-md border bg-gray-50 hover:bg-gray-100 active" data-emotion="Default">Default</button>
+                                    <button class="control-btn py-2 px-4 rounded-md border bg-gray-50 hover:bg-gray-100" data-emotion="Happy">Happy</button>
+                                    <button class="control-btn py-2 px-4 rounded-md border bg-gray-50 hover:bg-gray-100" data-emotion="Angry">Angry</button>
+                                    <button class="control-btn py-2 px-4 rounded-md border bg-gray-50 hover:bg-gray-100" data-emotion="Intrigued">Intrigued</button>
+                                </div>
+                                <p class="text-sm text-gray-500 mt-4">Select an emotion to see the component variant change instantly. This demonstrates the "Combinatorial Efficiency" win.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="technical" class="content-section">
+                     <div class="text-center mb-10">
+                        <h2 class="text-3xl font-bold text-gray-800">Key Senior-Level Technical Wins</h2>
+                        <p class="mt-2 text-gray-600 max-w-2xl mx-auto">The component's internal structure was engineered for maximum combinatorial flexibility and animation readiness.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="tech-card rounded-xl p-6">
+                            <div class="text-2xl mb-3">🎨</div>
+                            <h3 class="font-semibold text-gray-800 mb-2">System-Level Control</h3>
+                            <p class="text-sm text-gray-600">All colors are linked to named Color Styles. This ensures the entire palette across all variants can be instantly updated from a single source if the brand changes color.</p>
+                        </div>
+                        <div class="tech-card rounded-xl p-6">
+                            <div class="text-2xl mb-3">🚀</div>
+                            <h3 class="font-semibold text-gray-800 mb-2">Animation-Ready Pipeline</h3>
+                            <p class="text-sm text-gray-600">The asset was structured using a Frame-based hierarchy, not Groups. This ensures a clean import with preset pivot points for After Effects/Lottie.</p>
+                        </div>
+                        <div class="tech-card rounded-xl p-6">
+                            <div class="text-2xl mb-3">🛡️</div>
+                            <h3 class="font-semibold text-gray-800 mb-2">Vector Integrity</h3>
+                            <p class="text-sm text-gray-600">All stroke properties were converted to a solid vector fill using the `Outline Stroke` command, eliminating rendering errors during Lottie export.</p>
+                        </div>
+                        <div class="tech-card rounded-xl p-6">
+                            <div class="text-2xl mb-3">🔄</div>
+                            <h3 class="font-semibold text-gray-800 mb-2">Combinatorial Efficiency</h3>
+                            <p class="text-sm text-gray-600">The component utilizes a `Variant Property` for emotion, allowing designers to change the character's expression with a single dropdown selection.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const contentSections = document.querySelectorAll('.content-section');
+            const emotionButtons = document.querySelectorAll('.control-btn');
+            const characterImage = document.getElementById('character-image');
+            
+            const characterImages = {
+                'Default': 'https://placehold.co/400x400/FDFBF8/3D3D3D?text=Default',
+                'Happy': 'https://placehold.co/400x400/FDFBF8/3D3D3D?text=Happy',
+                'Angry': 'https://placehold.co/400x400/FDFBF8/3D3D3D?text=Angry',
+                'Intrigued': 'https://placehold.co/400x400/FDFBF8/3D3D3D?text=Intrigued'
+            };
+
+            function switchTab(tabName) {
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.dataset.tab === tabName);
+                });
+                contentSections.forEach(section => {
+                    section.classList.toggle('active', section.id === tabName);
+                });
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    switchTab(link.dataset.tab);
+                });
+            });
+
+            emotionButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const emotion = button.dataset.emotion;
+                    
+                    emotionButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    if (characterImages[emotion]) {
+                        characterImage.src = characterImages[emotion];
+                        characterImage.alt = `Character showing ${emotion.toLowerCase()} emotion`;
+                    }
+                });
+            });
+            
+            switchTab('impact');
+        });
+    </script>
